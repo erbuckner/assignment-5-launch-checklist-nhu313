@@ -24,7 +24,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 function validateInput(testInput) {
   //check if the test Input is empty
     // if it is, return 'Empty'
-  // check if it's not a number
+  // check if it's not a number isNaN
     // return 'Not a Number'
   // else
     // return 'Is a Number'
@@ -45,7 +45,7 @@ function formSubmission(document, list, pilotValue, copilotValue, fuelLevelValue
     // change launchStatus to "Shuttle not ready for launch", and color to red
     // change the fuelStatus to "Fuel level too low for launch"
 
-    // check if the cargo level is more than 10,000
+  // check if the cargo level is more than 10,000
     // change launchStatus to "Shuttle not ready for launch", and color to red
     // change the cargoStatus to "Cargo level too high for launch"
 
