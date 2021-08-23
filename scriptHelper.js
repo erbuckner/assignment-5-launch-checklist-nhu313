@@ -24,16 +24,27 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 function validateInput(testInput) {
   //check if the test Input is empty
     // if it is, return 'Empty'
-  // check if it's not a number isNaN
+    if (testInput == "") {
+      return "Empty";
+   // check if it's not a number isNaN
     // return 'Not a Number'
+    } else if (isNaN(testInput) == true) {
+      return "Not a Number";
   // else
     // return 'Is a Number'
+    } else {
+      return "Is a Number";
+    }
 }
 
 function formSubmission(document, list, pilotValue, copilotValue, fuelLevelValue, cargoLevelValue) {
   // check if any of the values are empty
     // if (validateInput(pilotValue) === 'Empty' || validateInput(copilotValue) === 'Empty')
     // alert user that they need to fill out all the fields alert('message')
+    if (validateInput(pilotValue) === "Empty") || (validateInput(copilotValue) === "Empty") || (validateInput(fuelLevelValue) == "Empty") || (validateInput(cargoLevelValue) == "Empty") {
+      alert("All fields are required!");
+    }
+
   // check if fuelLevelValue and cargoLevelValue are not numbers
     // alert the user that must enter valid input
 
