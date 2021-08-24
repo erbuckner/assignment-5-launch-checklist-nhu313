@@ -30,5 +30,24 @@ window.addEventListener("load", function() {
       // let list = document.getElementById('faultyItems');
       // formSubmission(document, list, pilotValue, copilotValue, fuelLevelValue, cargoLevelValue)
 
+      
+        let form = document.querySelector("form");
+        form.addEventListener("submit", function(event) {
+           let pilotInput = this.document.querySelector("input[name=pilotName]");
+           const pilotValue = pilotInput.value;
+           let copilotInput = this.document.querySelector("input[name=copilotName]");
+           const copilotValue = copilotInput.value;
+           let fuelLevelInput = this.document.querySelectory("input[name=fuelLevel]");
+           const fuelLevelValue = fuelLevelInput.value;
+           let cargoLevelInput = this.document.querySelectory("input[name=cargoLevel]");
+           const cargoLevelValue = cargoLevelInput.value;
+           
+           let list = document.getElementById('faultyItems');
+           formSubmission(document, list, pilotValue, copilotValue, fuelLevelValue, cargoLevelValue);
+
+        
+            
+        });  
+
 
 });

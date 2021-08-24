@@ -43,11 +43,14 @@ function formSubmission(document, list, pilotValue, copilotValue, fuelLevelValue
     // alert user that they need to fill out all the fields alert('message')
     if (validateInput(pilotValue) === "Empty") || (validateInput(copilotValue) === "Empty") || (validateInput(fuelLevelValue) == "Empty") || (validateInput(cargoLevelValue) == "Empty") {
       alert("All fields are required!");
+      event.preventDefault();
     }
-
   // check if fuelLevelValue and cargoLevelValue are not numbers
     // alert the user that must enter valid input
-
+    if (validateInput(fuelLevelValue) == "Not a Number") || (validateInput(cargoLevelValue) == "Not a Number") {
+      alert("You must enter a number for Fuel Level and Cargo Level inputs.");
+      event.preventDefault();
+    }
 
   // set the list.style.visibility = 'visible'
   // get the pilot status, update the inner HTML to say `Pilot ${pilotValue} is ready for launch`
