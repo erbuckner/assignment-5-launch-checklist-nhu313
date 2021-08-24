@@ -45,7 +45,7 @@ window.addEventListener("load", function() {
            let list = document.getElementById('faultyItems');
            formSubmission(document, list, pilotValue, copilotValue, fuelLevelValue, cargoLevelValue);
 
-        
+            console.log("is this running?");
             
         });  
 
