@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 
-const { myFetch, pickPlanet, addDestinationInfo } = require("./scriptHelper");
+//const { myFetch, pickPlanet, addDestinationInfo } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
 
@@ -33,20 +33,19 @@ window.addEventListener("load", function() {
       
         let form = document.querySelector("form");
         form.addEventListener("submit", function(event) {
-           let pilotInput = this.document.querySelector("input[name=pilotName]");
+           let pilotInput = document.querySelector("input[name=pilotName]");
            const pilotValue = pilotInput.value;
-           let copilotInput = this.document.querySelector("input[name=copilotName]");
+           let copilotInput = document.querySelector("input[name=copilotName]");
            const copilotValue = copilotInput.value;
-           let fuelLevelInput = this.document.querySelectory("input[name=fuelLevel]");
+           let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
            const fuelLevelValue = fuelLevelInput.value;
-           let cargoLevelInput = this.document.querySelectory("input[name=cargoLevel]");
+           let cargoLevelInput = document.querySelector("input[name=cargoMass]");
            const cargoLevelValue = cargoLevelInput.value;
            
            let list = document.getElementById('faultyItems');
+           event.preventDefault();
            formSubmission(document, list, pilotValue, copilotValue, fuelLevelValue, cargoLevelValue);
 
-            console.log("is this running?");
-            
         });  
 
 
