@@ -19,6 +19,20 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                 <img src="">
                 `
    */
+
+  const missionTarget = document.getElementById("missionTarget");
+  missionTarget.innerHTML = `
+  <h2>Mission Destination</h2>
+  <ol>
+      <li>Name: ${name}</li>
+      <li>Diameter: ${diameter}</li>
+      <li>Star: ${star}</li>
+      <li>Distance from Earth: ${distance}</li>
+      <li>Number of Moons: ${moons}</li>
+  </ol>
+  <img src="${imageUrl}">
+  `;
+
 }
 
 function validateInput(testInput) {
@@ -73,6 +87,7 @@ function formSubmission(document, list, pilotValue, copilotValue, fuelLevelValue
   // check if the cargo level is more than 10,000
   if(cargoLevelValue > 10000) {
     // change launchStatus to "Shuttle not ready for launch", and color to red
+    launchStatus.style.color = "red";
     launchStatus.innerHTML = "Shuttle not ready for launch";
     // change the cargoStatus to "Cargo level too high for launch"
     document.getElementById("cargoStatus").innerHTML = "Cargo level too high for launch";
@@ -92,7 +107,8 @@ async function myFetch() {
 
   planetsReturned = await fetch('https://handlers.education.launchcode.org/static/planets.json').then(function (response) {
       // get the json from the response
-        });
+      return response.json();
+  });
 
     return planetsReturned;
 }
@@ -100,6 +116,7 @@ async function myFetch() {
 function pickPlanet(planets) {
   // randomly pick a planet from the array
   // Math random for index
+  return planets[Math.floor(Math.random() * planets.length)];
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
